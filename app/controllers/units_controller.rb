@@ -1,5 +1,6 @@
 class UnitsController < ApplicationController
   before_action :set_unit, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user
 
   # GET /units
   # GET /units.json
@@ -64,11 +65,17 @@ class UnitsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_unit
-      @unit = Unit.find(params[:id])
+      @unit = Unit.includes(:course).find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def unit_params
       params.require(:unit).permit(:unit1, :unit2, :unit3, :unit4, :unit5, :course_id)
+    end
+	
+	def authenticate_user
+        if !logged_in?
+            redirect_to login_url
+        end
     end
 end

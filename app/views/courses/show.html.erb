@@ -10,5 +10,18 @@
   <%= @course.description %>
 </p>
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
+<p>
+  <strong>Units:</strong>
+  <% if !@course.units.blank? %>
+  <% @course.units.each do |u| %>
+    <%= u.unit1 %>
+	<%= u.unit2 %>
+	<%= u.unit3 %>
+	<%= u.unit4 %>
+	<%= u.unit5 %>
+  <%end%>
+  <%end%>
+</p>
+
+<%= link_to 'Edit', edit_course_path(@course) if teacher? %> |
 <%= link_to 'Back', courses_path %>
