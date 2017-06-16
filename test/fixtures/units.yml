@@ -1,17 +1,1 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  unit1: MyString
-  unit2: MyString
-  unit3: MyString
-  unit4: MyString
-  unit5: MyString
-  course: one
-
-two:
-  unit1: MyString
-  unit2: MyString
-  unit3: MyString
-  unit4: MyString
-  unit5: MyString
-  course: two

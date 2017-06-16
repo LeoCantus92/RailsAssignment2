@@ -21,9 +21,15 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
-  database: db/test.sqlite3
+  adapter: sqlite3
+  database: test.sqlite3
+  encoding: utf8
+  pool: 5
+  username: J273522Test
+  password: J273522Test
+  host: 223.27.22.124
+  port: 3306
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: J273522Test

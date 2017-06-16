@@ -72,7 +72,7 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation, :teacher)
     end
-    
+
     def authenticate_user
         if !logged_in?
             redirect_to login_url
