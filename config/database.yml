@@ -16,6 +16,10 @@ default: &default
 development:
   <<: *default
   database: J273522Assign2
+  
+production:
+  <<: *default
+  database: J273522Assign2
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -29,7 +33,3 @@ test:
   password: J273522Test
   host: 223.27.22.124
   port: 3306
-
-production:
-  <<: *default
-  database: J273522Test
