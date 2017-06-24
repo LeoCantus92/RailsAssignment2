@@ -50,6 +50,8 @@ class CoursesController < ApplicationController
         format.json { render json: @course.errors, status: :unprocessable_entity }
       end
     end
+      rescue => e
+      puts "An error has occurred!"
   end
 
   # DELETE /courses/1

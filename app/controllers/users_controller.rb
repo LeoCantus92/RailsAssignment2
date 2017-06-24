@@ -50,6 +50,8 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+    rescue => e
+      puts "An error has occurred!"
   end
 
   # DELETE /users/1

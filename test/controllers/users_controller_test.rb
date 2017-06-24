@@ -1,24 +1,21 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
-
-    test "Create User" do
-        userCreateTest
-        assert true
-    end
     
     test "Create another User" do
         userCreateTest2
         assert true
     end
     
-    test "Update User" do
-        userUpdateTest
-        assert_equal true, true
-        assert_equal "passwordier5555", "passwordier5555"
-    end
-    
-    test "Delete User" do
+    test "Complete User" do
+        u = userCreateTest
+        assert true
+        
+        u = User.where(name: "John").first
+        userUpdateTest(u)
+        assert_equal true, u.teacher
+        assert_equal "ectioBilogist@gmail.com", u.email
+        
         userDeleteTest
         assert_empty(@deleteUser)
     end

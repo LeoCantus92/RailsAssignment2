@@ -1,18 +1,15 @@
 require 'test_helper'
 
 class CoursesControllerTest < ActionDispatch::IntegrationTest
-  
-    test "Create Course" do
-        courseCreateTest
+
+    test "Complete Course" do
+        c = courseCreateTest
         assert true
-    end
-    
-    test "Update Course" do
-        courseUpdateTest
-        assert_equal "Teaches you how to program.", "Teaches you how to program."
-    end
-    
-    test "Delete Course" do
+        
+        c = Course.where(name: "Programming").first
+        courseUpdateTest(c)
+        assert_equal "Teaches you how to program.", c.description
+        
         courseDeleteTest
         assert_empty(@deleteCourse)
     end

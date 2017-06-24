@@ -12,12 +12,12 @@ class ActiveSupport::TestCase
     end
     
     def userCreateTest2
-        User.create!(name: "Jade", email: "ectoBiologist@gmail.com", password: "413612106211", password_confirmation: "413612106211", teacher: true)
+        User.create!(name: "Jade", email: "gardenGnostic@gmail.com", password: "413612106211", password_confirmation: "413612106211", teacher: true)
     end
     
-    def userUpdateTest
-        @updateUser = User.where(name: "John")
-        @updateUser = User.update(teacher: true,password: "passwordier5555", password_confirmation: "passwordier5555")
+    def userUpdateTest(param)
+        @updateUser = param
+        @updateUser = @updateUser.update(teacher: true, email: "ectioBilogist@gmail.com")
     end
     
     def userDeleteTest
@@ -29,8 +29,8 @@ class ActiveSupport::TestCase
         Course.create!(name: "Programming", description: "Teaches you how to program.")
     end
     
-    def courseUpdateTest
-        @updateCourse = Course.where(name: "Programming")
+    def courseUpdateTest(param)
+        @updateCourse = param
         @updateCourse = Course.update(description: "Teaches you how to program and make websites.")
     end
     
